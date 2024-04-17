@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="authors" content="Edward Lai, Thomas Lai">
+    <title>ChessConnect</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/ed7e0b9ede.js" crossorigin="anonymous"></script>
+    <script>
+        function validateForm() {
+            let x = document.forms["myform"]["name"].value;
+            if (x == "") {
+                alert("Name is required");
+                return false;
+            }
+            let x1 = document.forms["myform"]["mail"].value;
+            if (x1 == "") {
+                alert("Email is required");
+                return false;
+            }
+            let y = document.forms["myform"]["subject"].value;
+            if (y == "") {
+                alert("Please select a subject");
+                return false;
+            }
+            let z = document.forms["myform"]["message"].value;
+            if (z.trim() == "") {
+                alert("Message cannot be empty");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><h1>Tufts Chess Club<i class="fas fa-chess"></i></h1></a>
+            </div>
+            <div class="links link-text">
+                <a href="community.html">Community</a>
+                <a href="about.html">About</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="resources.html">Resources</a>
+                <a href="contact.html">Contact</a>
+                <a class="menu" onclick="openNav()">&#9776;</a>
+            </div>
+        </div>
+        <div id="mobileNav" class="overlay">
+            <a class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="community.html">Community</a>
+                <a href="about.html">About</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="resources.html">Resources</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+        <script>
+            function openNav() {
+                document.getElementById("mobileNav").style.width = "100%";
+            }
+            function closeNav() {
+                document.getElementById("mobileNav").style.width = "0%";
+            }
+        </script>
+    </header>
+    <div class="main-content">
+        <h2 class="title">Contact Us</h2>
+        <div class="title-underline"></div>
+        <div class="container contact-form">
+            <!-- <h3>We'd love to hear from you!</h3> -->
+            <form name="myform" action='/process.php' onsubmit="return validateForm()" method="post">
+                <div class="form-group">
+                    <label>Name:</label> 
+                    <input type="text" name="name">
+                </div>
+                <div class="form-group">
+                    <label>E-mail:</label> 
+                    <input type="email" name="mail">
+                </div>
+                <div class="form-group">
+                    <label>Subject:</label>
+                    <select name="subject">
+                        <option value="">-- Please Select --</option>
+                        <option value="General Inquiry">General Inquiry</option>
+                        <option value="Technical Issue">Technical Issue</option>
+                        <option value="Account Problem">Account Problem</option>
+                        <option value="Payment Inquiry">Payment Inquiry</option>
+                        <option value="Tournament Inquiry">Tournament Inquiry</option>
+                        <option value="Coaching Request">Coaching Request</option>
+                        <option value="Account Security Concern">Account Security Concern</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message:</label> 
+                    <textarea name="message"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Send Message">
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="row">
+                <div class="col">
+                    <h5>About Us</h5>
+                    <p>ChessConnect is an innovative online platform crafted to elevate the chess journey, bring together passionate chess players, streamline virtual competitions, oversee tournaments, and cultivate a thriving chess community.</p>
+                </div>
+                <div class="col">
+                    <h5>Contact Us</h5>
+                    <p>177 College Ave, Medford, MA 02155</p>
+                    <p>jumboschessclub@gmail.com</p>
+                    <p>(123) 456-7890</p>
+                </div>
+                <div class="col">
+                    <h5>Follow Us</h5>
+                    <a href="#">Facebook</a><br>
+                    <a href="https://www.instagram.com/tuftschessclub/?igshid=MmIzYWVlNDQ5Yg%3D%3D">Instagram</a><br>
+                    <a href="https://discord.gg/sAuH4dMw9s">Discord</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <hr>
+                    <p>&copy; 2024 Tufts Chess Club. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

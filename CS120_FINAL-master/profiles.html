@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="authors" content="Vishnusai Ramesh, Edward Lai, Thomas Lai">
+    <title>Tufts Chess Club</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/ed7e0b9ede.js" crossorigin="anonymous"></script>
+
+</head>
+
+<style>
+        /* Add any additional CSS styles you need for the profiles page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* .container {
+            max-width:1250px;
+      
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        } */
+
+        /* Styling for the Leaderboard*/
+        h1 {
+            text-align: center;
+        }
+
+        #buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #leaderboard-table {
+            width: 70%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        #leaderboard-table th,
+        #leaderboard-table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+
+        #leaderboard-table th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+
+        #leaderboard-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /*Styling for the Profile stuff*/ 
+
+        .profile-card {
+            width: 1050px;
+            align-items: center;
+            margin-bottom: 20px;
+            margin-left: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .profile-info {
+            flex: 1;
+            text-align: center;
+        }
+
+        .profile-name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .profile-username {
+            font-size: 16px;
+            color: #777;
+        }
+        .profile-join-date {
+                font-size: 14px;
+                color: #777;
+        }
+
+</style>
+
+<body>
+
+     <!-- Main Content -->
+     <div class="main-content">
+        <h2 class="title">
+            Welcome to Tufts Chess Club Page</h2>
+        <div class="title-underline"></div>
+     </div>
+
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><h1>Tufts Chess Club<i class="fas fa-chess"></i>
+                </h1></a>
+            </div>
+            
+
+            <div class="links link-text">
+                <a href="community.html">Community</a>
+                <a href="about.html">About</a>
+                <a href="club.html">Club</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="resources.html">Resources</a>
+                <a href="contact.html">Contact</a>
+                <a class="menu" onclick="openNav()">&#9776;</a>
+            </div>
+        </div>
+        <!-- mobile nav -->
+        <div id="mobileNav" class="overlay">
+            <a class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="community.html">Community</a>
+                <a href="about.html">About</a>
+                <a href="club.html">Club</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="resources.html">Resources</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+        <script>
+            function openNav() {
+                document.getElementById("mobileNav").style.width = "100%";
+            }
+            function closeNav() {
+                document.getElementById("mobileNav").style.width = "0%";
+            }
+        </script>
+    </header>
+
+    <!-- Profiles Container -->
+    <div class="container">
+       
+        <div id="profilesContainer"></div>
+    </div>
+
+    
+<script>
+
+async function fetchClubMembers() {
+    const clubUrlID = 'tufts-chess-club'; // Replace 'tufts-chess-club' with the actual URL ID of the club
+    try {
+        const response = await fetch(`https://api.chess.com/pub/club/${clubUrlID}/members`);
+        const data = await response.json();
+        console.log('Data received:', data);
+
+        const profilesContainer = document.getElementById('profilesContainer');
+        const members = data.all_time; // Use the 'all_time' array for members' data, change this if you need a different array
+
+        if (Array.isArray(members)) {
+            const membersDetails = await Promise.all(members.map(member => 
+                fetchMemberCompleteDetails(member.username)));
+
+            // Sort members by rapid rating in descending order
+            membersDetails.sort((a, b) => {
+                const rapidA = a.stats && a.stats.chess_rapid ? a.stats.chess_rapid.last.rating : 0;
+                const rapidB = b.stats && b.stats.chess_rapid ? b.stats.chess_rapid.last.rating : 0;
+                return rapidB - rapidA; // For descending order
+            });
+
+            // Create profile cards for each member based on the sorted list
+            membersDetails.forEach((member, index) => {
+                if (member.userDetails && member.stats) {
+                    const profileCard = createProfileCard(member.userDetails, member.stats, index + 1);
+                    profilesContainer.appendChild(profileCard);
+                }
+            });
+        } else {
+            console.error('Data format error: members is not an array.');
+        }
+    } catch (error) {
+        console.error('Error fetching club members:', error);
+    }
+}
+
+async function fetchMemberCompleteDetails(username) {
+    try {
+        const userDetails = await fetchMemberDetails(username);
+        const stats = await fetchMemberStats(username);
+        return { userDetails, stats };
+    } catch (error) {
+        console.error(`Error fetching complete details for ${username}:`, error);
+        return null; // Return null in case of an error to handle it gracefully
+    }
+}
+
+async function fetchMemberDetails(username) {
+    try {
+        const response = await fetch(`https://api.chess.com/pub/player/${username}`);
+        const userDetails = await response.json();
+        return userDetails;
+    } catch (error) {
+        console.error(`Error fetching details for ${username}:`, error);
+        return null; // Return null in case of an error to handle it gracefully
+    }
+}
+
+async function fetchMemberStats(username) {
+    try {
+        const response = await fetch(`https://api.chess.com/pub/player/${username}/stats`);
+        const stats = await response.json();
+        return stats;
+    } catch (error) {
+        console.error(`Error fetching stats for ${username}:`, error);
+        return null;
+    }
+}
+
+function createProfileCard(userDetails, statsDetails, number) {
+    const profileCard = document.createElement('div');
+    profileCard.className = 'profile-card';
+
+    const profileInfo = document.createElement('div');
+    profileInfo.className = 'profile-info';
+
+    const profileNumber = document.createElement('div');
+    profileNumber.className = 'profile-number';
+    profileNumber.textContent = `${number}. `;
+    profileInfo.appendChild(profileNumber);
+
+    const profileUsername = document.createElement('div');
+    profileUsername.className = 'profile-username';
+    profileUsername.textContent = userDetails.username;
+    profileInfo.appendChild(profileUsername);
+
+    if (userDetails.name) {
+        const profileName = document.createElement('div');
+        profileName.textContent = `Name: ${userDetails.name}`;
+        profileInfo.appendChild(profileName);
+    }
+
+    if (userDetails.last_online) {
+        const profileLastOnline = document.createElement('div');
+        profileLastOnline.textContent = `Last Online: ${new Date(userDetails.last_online * 1000).toLocaleString()}`;
+        profileInfo.appendChild(profileLastOnline);
+    }
+
+    
+
+    if (statsDetails && statsDetails.chess_rapid) {
+        const rapidStats = document.createElement('div');
+        rapidStats.textContent = `Rapid Rating: ${statsDetails.chess_rapid.last.rating}`;
+        profileInfo.appendChild(rapidStats);
+    }
+
+    // Display chess_blitz statistics if available
+    if (statsDetails && statsDetails.chess_blitz) {
+        const blitzStats = document.createElement('div');
+        blitzStats.textContent = `Blitz Rating: ${statsDetails.chess_blitz.last.rating}`;
+        profileInfo.appendChild(blitzStats);
+    }
+
+    profileCard.appendChild(profileInfo);
+    return profileCard;
+}
+
+fetchClubMembers();
+
+    </script>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="row">
+                <!-- About Section -->
+                <div class="col">
+                    <h5>About Us</h5>
+                    <p>ChessConnect is an innovative online platform crafted to elevate the chess journey, bring together passionate chess players, streamline virtual competitions, oversee tournaments, and cultivate a thriving chess community.</p>
+                </div>
+                <!-- Contact Section -->
+                <div class="col">
+                    <h5>Contact Us</h5>
+                    <p>177 College Ave, Medford, MA 02155</p>
+                    <p>jumboschessclub@gmail.com</p>
+                    <p>(123) 456-7890</p>
+                </div>
+                <!-- Social Media Section -->
+                <div class="col">
+                    <h5>Follow Us</h5>
+                    <a href="#">Facebook</a><br>
+                    <a href="https://www.instagram.com/tuftschessclub/?igshid=MmIzYWVlNDQ5Yg%3D%3D">Instagram</a><br>
+                    <a href="https://discord.gg/sAuH4dMw9s">Discord</a>
+                </div>
+            </div>
+            <!-- Copyright Section -->
+            <div class="row">
+                <div class="col">
+                    <hr>
+                    <p>&copy; 2023 ChessConnect. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

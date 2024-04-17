@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    position: relative;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    margin-top: 70px;
+    background-color: #f5f5f5;
+}
+
+.logo {
+    float: left;
+    margin-left: 10%;
+}
+
+.logo i {
+        margin-left: 16px; /* Adjust the margin value to add desired spacing */
+}
+.logo a {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 48px;
+    display: flex;
+    align-items: center;
+    color: #1d1d1d;
+}
+
+.navbar {
+    background-color: #ffffff;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.links {
+    margin-right: 10%;
+    float: right;
+}
+
+.links a {
+    float: left;
+    text-align: center;
+    padding: 16px 24px;
+    display: block;
+    color: #1d1d1d;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.links a:hover {
+    background-color: #1d1d1d;
+    color: #ffffff;
+    border-radius: 20px;
+}
+
+.navbar .active {
+    font-weight: bold;
+}
+
+.logo a:hover {
+    color: #767474;
+}
+
+.link-text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .links a:not(:last-child) {
+        display: none;
+    }
+    .navbar a.menu {
+        float: left;
+        display: block;
+        font-size: 32px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    a.menu {
+        display: none;
+    }
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #cccccc;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px;
+    }
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+.main-content {
+    padding: 40px;
+}
+
+.title {
+    color: #1d1d1d;
+    font-size: 45px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.title-underline {
+    position: relative;
+    border-bottom: 4px solid #1d1d1d;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #1d1d1d;
+}
+
+.footer-container {
+    width: 80%;
+    margin: auto;
+}
+
+footer {
+    background-color: #1d1d1d;
+    color: #fff;
+    padding: 20px 0;
+}
+
+footer .col {
+    width: 33.33%;
+    float: left;
+    text-align: center;
+    padding: 10px;
+}
+
+footer h5 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+footer p, footer a {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #aaa;
+}
+
+footer a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+footer hr {
+    border: none;
+    border-top: 1px solid #1d1d1d;
+    margin: 20px 0;
+}
+
+footer .row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.images{
+    margin-left: 40px;
+    height: 290px;
+    width: 290px;
+    margin-right: 120px;
+}
+
+.container{
+    display: flex;
+}
+
+.names {
+    flex: 1;
+    border: 2px solid black; /* Add a black border to the names div */
+    padding: 20px; /* Add some padding to create space between content and border */
+}
+
+.names:first-child {
+    margin-left: 30px;
+    flex: 40; 
+}
+
+.names:last-child {
+    margin-right: 30px;
+    margin-left: 250px;
+    flex: 60;
+}
+
+.forms{
+    margin-bottom:20px;
+}
+
+.formfield {
+    display: flex;
+    align-items: center;
+}
+
+.formfield label{
+    margin-right: 4px;
+}
+
+
+
+
+
+/* Adding to existing styles.css */
+
+.contact-form {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    width: 250%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    height: 150px;
+}
+
+.form-group input[type="submit"] {
+    background-color: #1d1d1d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #333333;
+}

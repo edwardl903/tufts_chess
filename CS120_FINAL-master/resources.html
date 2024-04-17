@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="authors" content="Vishnusai Ramesh, Edward Lai, Thomas Lai">
+    <title>ChessConnect</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/ed7e0b9ede.js" crossorigin="anonymous"></script>
+
+</head>
+
+<style>
+    h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        ol {
+            margin-left: 30px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: #007bff;
+        }
+
+    .main-content-text {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;      
+        }
+     .daily-puzzle-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .daily-puzzle-container h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        /* Styling for the chess puzzle */
+        #chessPuzzle {
+            max-width: 100%;
+            height: auto;
+            background-color: #f2f2f2;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #chessPuzzle img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        /* Styling for the credit link */
+        .credit-link {
+            font-size: 14px;
+            color: #888;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .credit-link a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .credit-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Styling for the Leaderboard*/
+        h1 {
+            text-align: center;
+        }
+
+        #buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #leaderboard-table {
+            width: 70%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        #leaderboard-table th,
+        #leaderboard-table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+
+        #leaderboard-table th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+
+        #leaderboard-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+         /* Styling for the streamers stuff */
+        #streamers-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            width: 70%;
+            margin: 0 auto;
+            margin-bottom: 40px;
+        }
+
+        .streamer {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .streamer img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .streamer p {
+            font-weight: bold;
+        }
+
+        .streamer a {
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #007bff;
+        }
+</style>
+
+<body>
+    <!-- Top Nav -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><h1>Tufts Chess Club<i class="fas fa-chess"></i>
+                </h1></a>
+            </div>
+            
+
+            <div class="links link-text">
+                <a href="community.html">Community</a>
+                <a href="about.html">About</a>
+                <a href="club.html">Club</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="resources.html">Resources</a>
+                <a href="contact.html">Contact</a>
+                <a class="menu" onclick="openNav()">&#9776;</a>
+            </div>
+        </div>
+        <!-- mobile nav -->
+        <div id="mobileNav" class="overlay">
+            <a class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="community.html">Community</a>
+                <a href="about.html">About</a>
+                <a href="club.html">Club</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="resources.html">Resources</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+        <script>
+            function openNav() {
+                document.getElementById("mobileNav").style.width = "100%";
+            }
+            function closeNav() {
+                document.getElementById("mobileNav").style.width = "0%";
+            }
+        </script>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div style="display: flex; justify-content: space-between;">
+                <div class="main-content-text" style="width: 48%;">
+                    <h2 class="title">Welcome to ChessConnect Resources</h2>
+                    <div class="title-underline"></div>
+        
+                    <div class="main-content-text">
+                        <p>
+                            ChessConnect Resources is your ultimate destination to immerse yourself in the world of chess with three fantastic features:
+                        </p>
+                        <ol>
+                            <li>
+                                <strong>Chess.com Leaderboard:</strong> Stay updated with the latest rankings and performances of top players in the chess world. Explore the leaderboard to see who's leading the charts and making headlines with their brilliant moves. <a href="#leaderboard-table">View Leaderboard</a>
+                            </li>
+                            <li>
+                                <strong>Chess.com Daily Puzzle:</strong> Sharpen your tactical skills with our daily chess puzzles! Challenge your mind and improve your board vision by solving puzzles designed to elevate your gameplay. <a href="#chessPuzzle">View Daily Puzzle</a>
+                            </li>
+                            <li>
+                                <strong>Chess.com Streamers:</strong> Get inspired by the best chess streamers on Chess.com! Discover their usernames, avatars, and Twitch.tv URLs as they share their expertise and exciting chess matches. <a href="#streamers-container">View Streamers</a>
+                            </li>
+                        </ol>
+                        <p>
+                            Whether you're a beginner or an experienced player, ChessConnect has something special for everyone. Join us today and take your chess game to new heights with our curated educational content and interactive puzzles. Connect, learn, and grow together with our thriving chess community. Embark on an exciting chess journey today!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Daily Puzzle Container -->
+                <div class="daily-puzzle-container">
+                    <h2 class="title">Random Daily Puzzle</h2>
+                    <div class="title-underline"></div>
+                    <div id="chessPuzzle"></div>
+                    <p class="credit-link">
+                        Puzzles provided by
+                        <a href="https://www.chess.com" target="_blank" rel="noopener">Chess.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    
+
+
+                    <!-- Script to fetch and display the random daily puzzle from the Chess.com API -->
+            <script>
+                async function fetchDailyPuzzle() {
+                    try {
+                        const response = await fetch('https://api.chess.com/pub/puzzle/random');
+                        const data = await response.json();
+
+                        const chessPuzzleContainer = document.getElementById('chessPuzzle');
+                        const puzzleImage = document.createElement('img');
+                        puzzleImage.src = data.image;
+                        puzzleImage.alt = 'Chess Puzzle';
+                        chessPuzzleContainer.appendChild(puzzleImage);
+                    } catch (error) {
+                        console.error('Error fetching daily puzzle:', error);
+                    }
+                }
+
+                fetchDailyPuzzle();
+            </script>
+            
+    </header>
+
+    <h1>Chess.com Leaderboards</h1>
+    <div id="buttons">
+        <button onclick="fetchAndDisplayLeaderboard('daily')">Daily</button>
+        <button onclick="fetchAndDisplayLeaderboard('live_rapid')">Rapid</button>
+        <button onclick="fetchAndDisplayLeaderboard('live_blitz')">Blitz</button>
+        <button onclick="fetchAndDisplayLeaderboard('live_bullet')">Bullet</button>
+        
+        
+    </div>
+    <table id="leaderboard-table">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Username</th>
+                <th>Score</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody id="leaderboard-body">
+            <!-- The fetched leaderboard data will be displayed here -->
+        </tbody>
+    </table>
+
+    <script>
+        const apiUrl = 'https://api.chess.com/pub/leaderboards';
+
+        // Function to fetch and display the specified leaderboard
+    async function fetchAndDisplayLeaderboard(leaderboardType) {
+        try {
+            const response = await fetch(apiUrl);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            if (data && data[leaderboardType]) {
+                // Fetch additional country name information for each player
+                const playersWithCountryNames = await fetchCountryNames(data[leaderboardType]);
+
+                // Display the leaderboard with country names
+                displayLeaderboard(playersWithCountryNames);
+            } else {
+                throw new Error('Invalid leaderboard type or data structure in the API response');
+            }
+        } catch (error) {
+            console.error('Error fetching leaderboard:', error);
+        }
+    }
+
+    // Function to fetch additional country name information for players
+    async function fetchCountryNames(players) {
+        const playerPromises = players.slice(0, 50).map(async player => {
+            const response = await fetch(player.country);
+            const countryData = await response.json();
+            return { ...player, country: countryData.name };
+        });
+        return Promise.all(playerPromises);
+    }
+
+    // Function to display the leaderboard
+    function displayLeaderboard(players) {
+        const leaderboardBody = document.getElementById('leaderboard-body');
+        leaderboardBody.innerHTML = '';
+        players.forEach((player, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${player.username}</td>
+                <td>${player.score}</td>
+                <td>${player.country}</td>
+            `;
+            leaderboardBody.appendChild(row);
+        });
+    }
+
+        // Call the fetchAndDisplayLeaderboard function with the 'daily' leaderboard on page load
+        fetchAndDisplayLeaderboard('daily');
+    </script>
+
+    <h1>Streamers</h1>
+    <div id="streamers-container"></div>
+    <script>
+    const streamersContainer = document.getElementById('streamers-container');
+
+    function createStreamerElement(streamer) {
+        const streamerDiv = document.createElement('div');
+        streamerDiv.classList.add('streamer');
+
+        const avatarImg = document.createElement('img');
+        avatarImg.src = streamer.avatar;
+        streamerDiv.appendChild(avatarImg);
+
+        const usernameP = document.createElement('p');
+        usernameP.textContent = streamer.username;
+        streamerDiv.appendChild(usernameP);
+
+        const twitchLink = document.createElement('a');
+        twitchLink.href = streamer.twitch_url;
+        twitchLink.textContent = 'Twitch Channel';
+        streamerDiv.appendChild(twitchLink);
+
+        return streamerDiv;
+    }
+
+    function fetchStreamers() {
+        fetch('https://api.chess.com/pub/streamers')
+            .then(response => response.json())
+            .then(data => {
+                // Clear the previous content if any
+                streamersContainer.innerHTML = '';
+
+                // Get the top 50 streamers
+                const top50Streamers = data.streamers.slice(0, 50);
+
+                // Loop through the top 50 streamers and create HTML elements to display the information
+                top50Streamers.forEach(streamer => {
+                    const streamerElement = createStreamerElement(streamer);
+                    streamersContainer.appendChild(streamerElement);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching streamers:', error);
+            });
+    }
+
+    // Fetch the top 50 streamers initially and then refresh every 5 minutes
+    fetchStreamers();
+    setInterval(fetchStreamers, 5 * 60 * 1000); // 5 minutes in milliseconds
+</script>
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="row">
+                <!-- About Section -->
+                <div class="col">
+                    <h5>About Us</h5>
+                    <p>ChessConnect is an innovative online platform crafted to elevate the chess journey, bring together passionate chess players, streamline virtual competitions, oversee tournaments, and cultivate a thriving chess community.</p>
+                </div>
+                <!-- Contact Section -->
+                <div class="col">
+                    <h5>Contact Us</h5>
+                    <p>177 College Ave, Medford, MA 02155</p>
+                    <p>jumboschessclub@gmail.com</p>
+                    <p>(123) 456-7890</p>
+                </div>
+                <!-- Social Media Section -->
+                <div class="col">
+                    <h5>Follow Us</h5>
+                    <a href="#">Facebook</a><br>
+                    <a href="https://www.instagram.com/tuftschessclub/?igshid=MmIzYWVlNDQ5Yg%3D%3D">Instagram</a><br>
+                    <a href="https://discord.gg/sAuH4dMw9s">Discord</a>
+                </div>
+            </div>
+            <!-- Copyright Section -->
+            <div class="row">
+                <div class="col">
+                    <hr>
+                    <p>&copy; 2024 Tufts Chess Club. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
