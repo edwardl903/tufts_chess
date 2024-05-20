@@ -235,11 +235,24 @@ footer .row::after {
     clear: both;
 }
 
-.images{
-    margin-left: 40px;
-    height: 290px;
-    width: 290px;
-    margin-right: 120px;
+.sidebysidecontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 200%;
+    margin: 0 auto;
+    height: 250px;
+}
+
+.sidebysidecontainer img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    flex: 1;
+    margin: 5px;
+    /*margin-left: 40px;
+    margin-right: 120px;*/
 }
 
 .container{
