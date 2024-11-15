@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tufts Chess Club</title>
+    <style>
+        /* Basic styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6e6e6;
+        }
+
+        /* Header section */
+        .header {
+            background-color: #99c0ff;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Logo in header */
+        .header img {
+            height: 50px;
+        }
+
+        /* Navigation */
+        .navbar {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Main banner with background image */
+        .banner {
+            background-image: url('your-image-path.jpg'); /* Replace 'your-image-path.jpg' with the actual path */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Chess club text */
+        .banner-text {
+            color: #99c0ff;
+            font-size: 48px;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Floating chess icons */
+        .chess-icon {
+            position: absolute;
+            color: #99c0ff;
+            font-size: 24px;
+        }
+
+        /* Position icons at different points */
+        .icon1 { top: 50px; left: 100px; }
+        .icon2 { top: 100px; right: 150px; }
+        .icon3 { bottom: 80px; left: 200px; }
+        .icon4 { bottom: 50px; right: 100px; }
+        .icon5 { top: 300px; left: 50%; transform: translateX(-50%); }
+    </style>
+</head>
+<body>
+
+    <!-- Header with logo and nav links -->
+    <header class="header">
+        <img src="tufts-logo.png" alt="Tufts University Logo">
+        <div class="navbar">
+            <a href="#about">About</a>
+            <a href="#leaderboards">Leaderboards</a>
+            <a href="#resources">Resources</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+
+    <!-- Banner section with background and chess icons -->
+    <section class="banner">
+        <div class="banner-text">TUFTS CHESS CLUB</div>
+        <div class="chess-icon icon1">♞</div>
+        <div class="chess-icon icon2">♝</div>
+        <div class="chess-icon icon3">♚</div>
+        <div class="chess-icon icon4">♛</div>
+        <div class="chess-icon icon5">♜</div>
+    </section>
+
+</body>
+</html>
