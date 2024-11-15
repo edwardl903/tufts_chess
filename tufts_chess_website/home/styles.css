@@ -1,0 +1,33 @@
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+            font-family: 'Jeju Gothic', sans-serif;
+            background-color: #e6e6e6;
+    }
+
+    /* Header section */
+    .header {
+        background-color: #9FC9E9;
+        color: #fff;
+        padding: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Logo and navigation */
+    .navbar {
+        display: flex;
+        gap: 40px;
+    }
+
+    .navbar a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 20px;
+        font-family: 'Jeju Gothic', sans-serif;
+    }
