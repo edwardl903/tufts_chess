@@ -1,100 +1,124 @@
-/* Header Styles */
-header {
-        background-color: #333;
-        color: white;
-        padding: 10px 20px;
-    }
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global body styles */
+body {
+    font-family: 'Jeju Gothic', sans-serif;
+    background-color: #9FC9E9;
+}
+
+/* Header section */
+.header {
+    background-color: #9FC9E9;
+    display: flex;
+    align-items: center;
+    padding: 0px 45px;
+    position: relative;
+}
+
+/* Tufts logo */
+.tufts-logo {
+    width: 71px;
+    height: 71px;
+    background: url('../../assets/images/tufts-logo.png') no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    left: 20px;
+    top: 8px;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    gap: 40px;
+    margin-left: auto; /* This moves the navbar to the right */
     
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s;
+    padding-top: 45px; /* Adjust this value to move the text down */
+
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+    color: #f2f2f2;
+}
+
+/* Mobile navigation menu button */
+.menu {
+    font-size: 25px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding-top: 35px; /* Adjust this value to move the text down */
+}
+
+/* Mobile navigation overlay */
+.overlay {
+    position: fixed;
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Show the overlay when mobile menu is open */
+.overlay.open {
+    width: 100%; /* When open, width is 100% */
+}
+
+/* Overlay content styles */
+.overlay-content {
+    text-align: center;
+}
+
+.overlay-content a {
+    color: white;
+    font-size: 25px;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.overlay-content a:hover {
+    color: #9FC9E9;
+}
+
+/* Close button for mobile navigation */
+.closebtn {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 40px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Mobile view responsiveness */
+@media (max-width: 768px) {
     .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        display: none; /* Hide regular navbar for mobile */
     }
-    
-    .logo h1 {
-        font-size: 24px;
-        margin: 0;
-    }
-    
-    .logo h1 i {
-        margin-left: 10px;
-        color: #f4c542;
-    }
-    
-    .links {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-    }
-    
-    .links a {
-        color: white;
-        text-decoration: none;
-        font-size: 16px;
-    }
-    
-    .links a:hover {
-        color: #f4c542;
-    }
-    
     .menu {
-        background: none;
-        border: none;
-        color: white;
-        font-size: 20px;
-        cursor: pointer;
-        display: none;
+        display: block; /* Show hamburger menu */
     }
-    
-    /* Mobile Navigation */
-    .overlay {
-        height: 100%;
-        width: 0;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.9);
-        overflow-x: hidden;
-        transition: 0.5s;
-    }
-    
-    .overlay-content {
-        position: relative;
-        top: 25%;
-        width: 100%;
-        text-align: center;
-    }
-    
-    .overlay-content a {
-        padding: 8px;
-        font-size: 25px;
-        color: white;
-        text-decoration: none;
-        display: block;
-        transition: 0.3s;
-    }
-    
-    .overlay-content a:hover {
-        color: #f4c542;
-    }
-    
-    .closebtn {
-        position: absolute;
-        top: 20px;
-        right: 45px;
-        font-size: 40px;
-        cursor: pointer;
-        color: white;
-    }
-    
-    @media (max-width: 768px) {
-        .menu {
-            display: inline;
-        }
-    
-        .links {
-            display: none;
-        }
-    }
-    
+}

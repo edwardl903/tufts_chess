@@ -1,51 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 import './Header.css';
 
 function Header() {
-  const openNav = () => {
-    document.getElementById("mobileNav").style.width = "100%";
-  };
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
-  const closeNav = () => {
-    document.getElementById("mobileNav").style.width = "0%";
-  };
+  const openNav = () => setIsNavOpen(true);
+  const closeNav = () => setIsNavOpen(false);
 
   return (
-    <header>
+    <header className="header">
+      <div className="tufts-logo"></div>
       <div className="navbar">
-        <div className="logo">
-          <a href="/">
-            <h1>
-              Tufts Chess Club <i className="fas fa-chess"></i>
-            </h1>
-          </a>
-        </div>
-        <div className="links link-text">
-          <a href="/community">Community</a>
-          <a href="/about">About</a>
-          <a href="/club">Club</a>
-          <a href="/gallery">Gallery</a>
-          <a href="/resources">Resources</a>
-          <a href="/contact">Contact</a>
-          <button className="menu" onClick={openNav}>
-            &#9776;
-          </button>
-        </div>
-      </div>
-      {/* Mobile Navigation */}
-      <div id="mobileNav" className="overlay">
-        <button className="closebtn" onClick={closeNav}>
-          &times;
+        {/* Use Link for navigation */}
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/leaderboards">Leaderboards</Link>
+        <Link to="/resources">Resources</Link>
+        <Link to="/gallery">Gallery</Link>
+        <Link to="/contact">Contact</Link>
+        <button className="menu" onClick={openNav}>
+          &#9776;
         </button>
-        <div className="overlay-content">
-          <a href="/community">Community</a>
-          <a href="/about">About</a>
-          <a href="/club">Club</a>
-          <a href="/gallery">Gallery</a>
-          <a href="/resources">Resources</a>
-          <a href="/contact">Contact</a>
-        </div>
       </div>
+
+      {/* Mobile Navigation */}
+      {isNavOpen && (
+        <div id="mobileNav" className="overlay">
+          <button className="closebtn" onClick={closeNav}>
+            &times;
+          </button>
+          <div className="overlay-content">
+            {/* Mobile navigation links */}
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <Link to="/leaderboards">Leaderboards</Link>
+            <Link to="/resources">Resources</Link>
+            <Link to="/gallery">Gallery</Link>
+            <Link to="/contact">Contact</Link>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
