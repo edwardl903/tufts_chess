@@ -1,49 +1,107 @@
-/* Footer Styles */
-footer {
-        background-color: #333;
-        color: white;
-        padding: 20px 40px;
-        font-size: 14px;
-    }
-    
-    .footer-container {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 20px;
-    }
-    
-    .col {
-        flex: 1;
-        min-width: 200px;
-    }
-    
-    .col h5 {
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-    
-    .col p, 
-    .col a {
-        margin: 5px 0;
-        color: white;
-        text-decoration: none;
-    }
-    
-    .col a:hover {
-        color: #f4c542;
-    }
-    
-    hr {
-        border: 0;
-        height: 1px;
-        background-color: #555;
-        margin: 20px 0;
-    }
-    
+.footer {
+    position: relative;
+    width: 1280px;
+    height: 340px;
+    background: #9FC9E9;
+    margin: auto; /* Center the footer horizontally */
+    padding: 20px;
+  }
+  
+  /* Contact Us Section */
+  .footer-contact {
+    position: absolute;
+    width: 303px;
+    height: auto;
+    left: 689px;
+    top: 63px;
+    font-family: 'JejuGothic', sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  
+  /* Social Media Section */
+  .footer-social div {
+    position: absolute;
+    left: 1082px;
+    font-family: 'JejuGothic', sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between text and logo */
+  }
+  
+  .footer-social div:nth-child(1) {
+    top: 61px;
+  }
+  .footer-social div:nth-child(2) {
+    top: 108px;
+  }
+  .footer-social div:nth-child(3) {
+    top: 162px;
+  }
+  
+  
+  
+  /* Logo */
+  .footer-logo {
+    position: absolute;
+    width: 186px;
+    height: 186px;
+    left: 270px;
+    top: 77px;
+  }
+  
+  .footer-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Copyright Section */
+  .footer-copyright {
+    position: absolute;
+    width: 466px;
+    height: auto;
+    left: 28px;
+    bottom: 20px;
+    font-family: 'JejuGothic', sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  
+  /* Rectangles (Decorations) */
+  .footer::before {
+    content: '';
+    position: absolute;
+    width: 108px;
+    height: 101px;
+    left: 0px;
+    top: 0px;
+    background: rgba(255, 255, 255, 0.88);
+  }
+  .footer::after {
+    content: '';
+    position: absolute;
+    width: 108px;
+    height: 101px;
+    left: 108px;
+    top: 101px;
+    background: rgba(255, 255, 255, 0.88);
+  }
+  
+
+  /* Make sure the links inherit the original color and not the ugly blue */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }

@@ -35,22 +35,59 @@ body {
 .navbar {
     display: flex;
     gap: 40px;
-    margin-left: auto; /* This moves the navbar to the right */
-    
+    margin-left: auto; /* Move navbar to the right */
+    padding-top: 55px;
 }
 
 .navbar a {
-    color: #fff;
+    color: white;
     text-decoration: none;
     font-size: 20px;
     transition: color 0.3s;
-    padding-top: 45px; /* Adjust this value to move the text down */
-
+    padding-top: 45px; /* Adjust to move text down */
 }
 
 .navbar a:hover {
     text-decoration: underline;
     color: #f2f2f2;
+}
+
+/* Dropdown container */
+.nav-item {
+    position: relative;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Below parent link */
+    left: 0;
+    background-color: #9FC9E9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    min-width: 150px; /* Set a width */
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f2f2f2;
+    color: #9FC9E9;
+}
+
+/* Show dropdown menu on hover */
+.nav-item:hover .dropdown-menu {
+    display: block; /* Show dropdown */
 }
 
 /* Mobile navigation menu button */
@@ -60,7 +97,6 @@ body {
     border: none;
     color: white;
     cursor: pointer;
-    padding-top: 35px; /* Adjust this value to move the text down */
 }
 
 /* Mobile navigation overlay */
@@ -80,12 +116,10 @@ body {
     z-index: 1000;
 }
 
-/* Show the overlay when mobile menu is open */
 .overlay.open {
     width: 100%; /* When open, width is 100% */
 }
 
-/* Overlay content styles */
 .overlay-content {
     text-align: center;
 }
@@ -116,7 +150,7 @@ body {
 /* Mobile view responsiveness */
 @media (max-width: 768px) {
     .navbar {
-        display: none; /* Hide regular navbar for mobile */
+        display: none; /* Hide regular navbar */
     }
     .menu {
         display: block; /* Show hamburger menu */

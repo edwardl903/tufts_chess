@@ -6,6 +6,7 @@ import AboutPage from './pages/AboutPage';
 import GalleryPage from './pages/GalleryPage';  // Import the GalleryPage component
 import ContactPage from './pages/ContactPage';  // Import the ContactPage component
 import NotFoundPage from './pages/NotFoundPage';  // 404 Page
+import Footer from './components/Footer/Footer';  // Import Footer component
 import './App.css';
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />  {/* ContactPage for the '/contact' route */}
         <Route path="*" element={<NotFoundPage />} />  {/* 404 page for non-existent routes */}
       </Routes>
+      <Footer />  {/* Include Footer component here */}
+
     </BrowserRouter>
   );
 }
