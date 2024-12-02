@@ -22,7 +22,7 @@ const Footer = () => {
       <div className="footer-social">
         <div>
           <a
-            href="https://www.instagram.com/"
+            href="https://www.instagram.com/tuftschessclub/"
             target="_blank"
             rel="noopener noreferrer"
           >

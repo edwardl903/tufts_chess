@@ -3,7 +3,6 @@
     width: 1280px;
     height: 340px;
     background: #9FC9E9;
-    margin: auto; /* Center the footer horizontally */
     padding: 20px;
   }
   
@@ -18,31 +17,30 @@
     font-size: 18px;
     line-height: 24px;
     color: #FFFFFF;
-    text-align: center;
+    text-align: left;
   }
-  
-  /* Social Media Section */
-  .footer-social div {
-    position: absolute;
-    left: 1082px;
+
+/* Social Media Section */
+.footer-social {
+    position: absolute; /* Ensure absolute positioning */
+    right: -70px; /* Move the section 20px away from the right edge of the footer */
+    top: 63px; /* Adjust this value to align vertically as needed */
+    flex-direction: column; /* Stack social media links vertically */
+    gap: 20px; /* Space between the divs */
+}
+
+.footer-social div {
     font-family: 'JejuGothic', sans-serif;
     font-size: 24px;
     line-height: 24px;
     color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Space between text and logo */
-  }
-  
-  .footer-social div:nth-child(1) {
-    top: 61px;
-  }
-  .footer-social div:nth-child(2) {
-    top: 108px;
-  }
-  .footer-social div:nth-child(3) {
-    top: 162px;
-  }
+    display: flex; /* Align text and logo horizontally */
+    gap: 24px; /* Space between text and logo */
+}
+
+.footer-social div img {
+    margin-left: -50px; /* Adds a gap between text and image */
+}
   
   
   
@@ -73,7 +71,12 @@
     line-height: 24px;
     color: #FFFFFF;
     text-align: center;
+    border-top: 1px solid #FFFFFF; /* Adds a thin white line */
+    padding-top: 10px; /* Space between the line and the text */
   }
+
+
+
   
   /* Rectangles (Decorations) */
   .footer::before {
