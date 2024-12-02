@@ -6,7 +6,7 @@ import AboutPage from './pages/AboutPage';
 import TeamPage from './pages/TeamPage';
 import GalleryPage from './pages/GalleryPage';  // Import the GalleryPage component
 import ContactPage from './pages/ContactPage/ContactPage';  // Import the ContactPage component
-import LeaderboardPage from './pages/LeaderboardPage';  // Import the LeaderboardPage component
+import LeaderboardPage from './pages/LeaderboardPage/LeaderboardPage';  // Import the LeaderboardPage component
 import ResourcePage from './pages/ResourcePage';  // Import the ResourcesPage component
 import NotFoundPage from './pages/NotFoundPage';  // 404 Page
 import Footer from './components/Footer/Footer';  // Import Footer component
