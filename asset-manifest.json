@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/tufts_chess/new_website/static/css/main.bc0534d8.css",
+    "main.js": "/tufts_chess/new_website/static/js/main.adb29368.js",
+    "static/js/453.362fbf1e.chunk.js": "/tufts_chess/new_website/static/js/453.362fbf1e.chunk.js",
+    "static/media/tufts-logo.png": "/tufts_chess/new_website/static/media/tufts-logo.ed06d8a51fac1c97ad39.png",
+    "index.html": "/tufts_chess/new_website/index.html",
+    "main.bc0534d8.css.map": "/tufts_chess/new_website/static/css/main.bc0534d8.css.map",
+    "main.adb29368.js.map": "/tufts_chess/new_website/static/js/main.adb29368.js.map",
+    "453.362fbf1e.chunk.js.map": "/tufts_chess/new_website/static/js/453.362fbf1e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bc0534d8.css",
+    "static/js/main.adb29368.js"
+  ]
+}
