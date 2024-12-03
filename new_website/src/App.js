@@ -14,7 +14,7 @@ import './App.css';
 
 function App() {
   return (
-    <BrowserRouter basename="/tufts_chess/new_website"> {/*becaue i am hosting on github page This will tell React Router to treat /tufts_chess/new_website as the root directory for your app.*/}
+    <BrowserRouter basename="/tufts_chess"> {/*becaue i am hosting on github page This will tell React Router to treat /tufts_chess/new_website as the root directory for your app.*/}
       <Header />  {/* The header appears on all pages */}
 
       <Routes>
