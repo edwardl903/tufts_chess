@@ -1,67 +1,15 @@
 "use client";
 
-import React from "react";
+import React, {useState} from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import eboardData from "./EboardData";
+
+type Semester = keyof typeof eboardData;
 
 const Eboard: React.FC = () => {
-  const members = [
-    {
-      name: "Edward Lai",
-      role: "Co-President",
-      year: "Senior",
-      major: "Computer Science & Human Factors Engineering",
-      hometown: "Boston, MA",
-      pronouns: "he/him",
-      favorite_chess_opening: "The Ponziani",
-      fun_fact: "I could play 20 people at once and lose to all of them",
-      image: "/2024president.jpg",
-    },
-    {
-      name: "Edward Lai",
-      role: "Co-President",
-      year: "Senior",
-      major: "Computer Science & Human Factors Engineering",
-      hometown: "Boston, MA",
-      pronouns: "he/him",
-      favorite_chess_opening: "The Ponziani",
-      fun_fact: "I could play 20 people at once and lose to all of them",
-      image: "/2024president.jpg",
-    },
-    {
-        name: "Edward Lai",
-        role: "Co-President",
-        year: "Senior",
-        major: "Computer Science & Human Factors Engineering",
-        hometown: "Boston, MA",
-        pronouns: "he/him",
-        favorite_chess_opening: "The Ponziani",
-        fun_fact: "I could play 20 people at once and lose to all of them",
-        image: "/2024president.jpg",
-      },
-      {
-        name: "Edward Lai",
-        role: "Co-President",
-        year: "Senior",
-        major: "Computer Science & Human Factors Engineering",
-        hometown: "Boston, MA",
-        pronouns: "he/him",
-        favorite_chess_opening: "The Ponziani",
-        fun_fact: "I could play 20 people at once and lose to all of them",
-        image: "/2024president.jpg",
-      },
-      {
-        name: "Edward Lai",
-        role: "Co-President",
-        year: "Senior",
-        major: "Computer Science & Human Factors Engineering",
-        hometown: "Boston, MA",
-        pronouns: "he/him",
-        favorite_chess_opening: "The Ponziani",
-        fun_fact: "I could play 20 people at once and lose to all of them",
-        image: "/2024president.jpg",
-      }
-  ]
+  const [selectedSemester, setSelectedSemester] = useState<Semester>("current");
+  const members = eboardData[selectedSemester];
 
 
   return (
@@ -72,8 +20,26 @@ const Eboard: React.FC = () => {
         <h1 className="text-4xl font-bold text-center text-[#64b0e2] pb-8 mb-8">
           Meet Our Eboard Members! 
         </h1>
+
+        {/* dropdown for semester selection */}
+        <div className="relative">
+          <select 
+            value={selectedSemester}
+            onChange={(e) => setSelectedSemester(e.target.value as Semester)}
+            className="border border-gray-300 rounded-lg px-4 py-2 bg-white shadow-md focus:outline-none focus:ring-2 focus:ring-[#64b0e2]"
+          >
+            {Object.keys(eboardData).map((semester) => (
+              <option key={semester} value ={semester}>
+                {semester}
+              </option>
+            ))}
+          </select>
+        </div>
+
+
+        
         {/* horizontal scrollable gallery */}
-        <div className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
+        <div className="flex overflow-x-auto space-x-10 pb-4 scrollbar-hide">
           {members.map((member, index) => (
             <div
               key={index}
@@ -90,16 +56,42 @@ const Eboard: React.FC = () => {
               <p className="text-gray-600 mb-4">{member.role}</p>
               <p className="text-gray-500 text-sm mb-2">{member.year}</p>
               <p className="text-gray-500 text-sm mb-2">{member.major}</p>
-              <div className="text-left">
-                <p className="text-gray-500 text-sm mb-2 ">hometown: {member.hometown}</p>
-                <p className="text-gray-500 text-sm mb-2">pronouns: {member.pronouns}</p>
-                <p className="text-gray-500 text-sm mb-2">favorite chess opening: {member.favorite_chess_opening}</p>
-                <p className="text-gray-500 text-sm mb-2">fun fact: {member.fun_fact}</p>
+              <p className="text-gray-500 text-sm mb-2 ">hometown: {member.hometown}</p>
+              <p className="text-gray-500 text-sm mb-2">pronouns: {member.pronouns}</p>
+              <p className="text-gray-500 text-sm mb-2">favorite chess opening: {member.favorite_chess_opening}</p>
+              <p className="text-gray-500 text-sm mb-2">fun fact: {member.fun_fact}</p>
+
+              <div className="flex justify-center space-x-4 mt-6">
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <img
+                        src="/insLogo.jpeg" 
+                        alt="instagram"
+                        className="w-6 h-6"
+                    />
+                </a>
+
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <img
+                        src="/facebookLogo.png" 
+                        alt="facebook"
+                        className="w-6 h-6"
+                    />
+                </a>
+
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <img
+                        src="/discordLogo.png"
+                        alt="discord"
+                        className="w-6 h-6"
+                    />
+                </a>
               </div>
             </div>
           ))}
         </div>
         <div className="h-20 bg-white w-full"></div>
+
+{/*         
         <div className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
           {members.map((member, index) => (
             <div
@@ -152,7 +144,7 @@ const Eboard: React.FC = () => {
       
             </div>
           ))}
-        </div>
+        </div> */}
       </main>
       <Footer />
     </div>

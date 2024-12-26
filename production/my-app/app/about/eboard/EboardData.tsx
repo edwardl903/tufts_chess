@@ -1,0 +1,122 @@
+const eboardData = {
+    current: [
+        {
+            name: "Edward Lai",
+            role: "Co-President",
+            year: "Senior",
+            major: "Computer Science & Human Factors Engineering",
+            hometown: "Boston, MA",
+            pronouns: "he/him",
+            favorite_chess_opening: "The Ponziani",
+            fun_fact: "I could play 20 people at once and lose to all of them",
+            image: "/2024president.jpg",
+          },
+          {
+            name: "Edward Lai",
+            role: "Co-President",
+            year: "Senior",
+            major: "Computer Science & Human Factors Engineering",
+            hometown: "Boston, MA",
+            pronouns: "he/him",
+            favorite_chess_opening: "The Ponziani",
+            fun_fact: "I could play 20 people at once and lose to all of them",
+            image: "/2024president.jpg",
+          },
+          {
+              name: "Edward Lai",
+              role: "Co-President",
+              year: "Senior",
+              major: "Computer Science & Human Factors Engineering",
+              hometown: "Boston, MA",
+              pronouns: "he/him",
+              favorite_chess_opening: "The Ponziani",
+              fun_fact: "I could play 20 people at once and lose to all of them",
+              image: "/2024president.jpg",
+            },
+            {
+              name: "Edward Lai",
+              role: "Co-President",
+              year: "Senior",
+              major: "Computer Science & Human Factors Engineering",
+              hometown: "Boston, MA",
+              pronouns: "he/him",
+              favorite_chess_opening: "The Ponziani",
+              fun_fact: "I could play 20 people at once and lose to all of them",
+              image: "/2024president.jpg",
+            },
+            {
+              name: "Edward Lai",
+              role: "Co-President",
+              year: "Senior",
+              major: "Computer Science & Human Factors Engineering",
+              hometown: "Boston, MA",
+              pronouns: "he/him",
+              favorite_chess_opening: "The Ponziani",
+              fun_fact: "I could play 20 people at once and lose to all of them",
+              image: "/2024president.jpg",
+            }
+    ],
+    "2024_Spring": [
+        {
+            name: "Sam Youkleles",
+            role: "Co-President",
+            year: "Senior",
+            major: "Computer Science & Human Factors Engineering",
+            hometown: "Boston, MA",
+            pronouns: "he/him",
+            favorite_chess_opening: "The Ponziani",
+            fun_fact: "I could play 20 people at once and lose to all of them",
+            image: "/samyoukleles.jpg",
+        },
+        {
+            name: "Sam Youkleles",
+            role: "Co-President",
+            year: "Senior",
+            major: "Computer Science & Human Factors Engineering",
+            hometown: "Boston, MA",
+            pronouns: "he/him",
+            favorite_chess_opening: "The Ponziani",
+            fun_fact: "I could play 20 people at once and lose to all of them",
+            image: "/samyoukleles.jpg",
+        },
+        {
+            name: "Sam Youkleles",
+            role: "Co-President",
+            year: "Senior",
+            major: "Computer Science & Human Factors Engineering",
+            hometown: "Boston, MA",
+            pronouns: "he/him",
+            favorite_chess_opening: "The Ponziani",
+            fun_fact: "I could play 20 people at once and lose to all of them",
+            image: "/samyoukleles.jpg",
+        }
+
+    ],
+    "2023_Fall": [
+        {
+            name: "Jonah Pflaster",
+            role: "Co-President",
+            year: "Senior",
+            major: "Computer Science & Human Factors Engineering",
+            hometown: "Boston, MA",
+            pronouns: "he/him",
+            favorite_chess_opening: "The Ponziani",
+            fun_fact: "I could play 20 people at once and lose to all of them",
+            image: "/jonahpflaster.jpg",
+        },
+        {
+            name: "Jonah Pflaster",
+            role: "Co-President",
+            year: "Senior",
+            major: "Computer Science & Human Factors Engineering",
+            hometown: "Boston, MA",
+            pronouns: "he/him",
+            favorite_chess_opening: "The Ponziani",
+            fun_fact: "I could play 20 people at once and lose to all of them",
+            image: "/jonahpflaster.jpg",
+        }
+    ]
+
+}
+
+export default eboardData;

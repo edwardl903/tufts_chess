@@ -79,8 +79,8 @@ const about: React.FC = () => {
       </section>
 
       {/* <div className="absolute inset-0 bg-gray-700 opacity-50"></div> */}
-
-        {/* <section className="w-full bg-white flex justify-center items-center overflow-hidden block p-10">
+{/* 
+        <section className="w-full bg-white flex justify-center items-center overflow-hidden block p-10">
             <div className="relative w-full h-[350px]">
                 <Image
                     src="/homepagebackground.jpg"
