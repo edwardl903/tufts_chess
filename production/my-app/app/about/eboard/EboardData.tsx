@@ -56,7 +56,7 @@ const eboardData = {
               image: "/2024president.jpg",
             }
     ],
-    "2024_Spring": [
+    "2024 | spring": [
         {
             name: "Sam Youkleles",
             role: "Co-President",
@@ -92,7 +92,7 @@ const eboardData = {
         }
 
     ],
-    "2023_Fall": [
+    "2023 | fall": [
         {
             name: "Jonah Pflaster",
             role: "Co-President",

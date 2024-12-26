@@ -16,25 +16,28 @@ const Eboard: React.FC = () => {
     <div>
       <Header transparent={false} />
       <main className="container mx-auto px-8 py-16">
-        <h1 className="text-4xl font-bold text-[#64b0e2] mb-4">Eboard</h1>
-        <h1 className="text-4xl font-bold text-center text-[#64b0e2] pb-8 mb-8">
-          Meet Our Eboard Members! 
-        </h1>
+        <h1 className="text-5xl text-center font-bold text-[#64b0e2] mb-4">Meet Our Eboard Members! </h1>
+        
+        <div className="flex justify-center space-x-6">
+          <h1 className="text-2xl font-semi-bold text-[#64b0e2] pb-8 mb-8">
+            Eboard Of
+          </h1>
 
-        {/* dropdown for semester selection */}
-        <div className="relative">
-          <select 
-            value={selectedSemester}
-            onChange={(e) => setSelectedSemester(e.target.value as Semester)}
-            className="border border-gray-300 rounded-lg px-4 py-2 bg-white shadow-md focus:outline-none focus:ring-2 focus:ring-[#64b0e2]"
-          >
-            {Object.keys(eboardData).map((semester) => (
-              <option key={semester} value ={semester}>
-                {semester}
-              </option>
-            ))}
-          </select>
-        </div>
+          {/* dropdown for semester selection */}
+          <div className="relative">
+            <select 
+              value={selectedSemester}
+              onChange={(e) => setSelectedSemester(e.target.value as Semester)}
+              className="border border-gray-300 rounded-xl px-2 py-1.5 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#64b0e2]"
+            >
+              {Object.keys(eboardData).map((semester) => (
+                <option key={semester} value ={semester}>
+                  {semester}
+                </option>
+              ))}
+            </select>
+          </div>
+          </div>
 
 
         
