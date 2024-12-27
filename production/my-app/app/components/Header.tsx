@@ -77,9 +77,9 @@ const Header: React.FC<HeaderProps> = ({ transparent }) => {
 
                 {/* gallery and its dropdown */}
                 <div className="relative group">
-                    <Link href="/gallery" passHref>
+                    <Link href="/events" passHref>
                         <div className="flex items-center space-x-2 cursor-pointer text-white">
-                            <h1>Gallery</h1>
+                            <h1>Events</h1>
                             {/* Dropdown arrow */}
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"

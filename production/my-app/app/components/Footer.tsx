@@ -17,17 +17,17 @@ const Footer: React.FC= () => {
                 </div>
 
                 {/* contact and social section */}
-                <div className="flex-1 flex justify-end items-start gap-20">
+                <div className="flex-1 flex justify-end items-start pt-4">
                     {/* Contact Info */}
-                    <div className="text-white space-y-4 w-1/3">
-                        <h3 className="text-lg font-bold">Contact Us</h3>
+                    <div className="text-xl text-white space-y-4 w-1/2">
+                        <h3 className="text-4xl font-bold">Contact Us</h3>
                         <p>jumboschessclub@email.com</p>
                         <p>177 College Ave, Medford, MA 02155</p>
                         <p>(123) 456-7890</p>
                     </div>
 
                     {/* Social Links */}
-                    <div className="text-white space-y-6 text-right">
+                    <div className="text-2xl text-white space-y-6 text-right">
                         
                         <a href="https://instagram.com" target="_blank" className="flex items-center space-x-2 hover:underline">
                             <Image
