@@ -100,8 +100,8 @@ const Header: React.FC<HeaderProps> = ({ transparent }) => {
                     </Link>
                     <div className="absolute hidden group-hover:block bg-white text-black rounded shadow-lg">
                         <ul className="p-1 text-md text-gray-600">
-                            <li className="px-4 py-1 hover:bg-gray-200">Mixer</li>
-                            <li className="px-4 py-1 hover:bg-gray-200">Bonding</li>
+                            <li className="px-4 py-1 hover:bg-gray-200">Upcoming Events</li>
+                            <li className="px-4 py-1 hover:bg-gray-200">Past Events</li>
                         </ul>
                     </div>
                 </div>

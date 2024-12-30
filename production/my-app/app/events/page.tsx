@@ -7,7 +7,7 @@ const Events: React.FC = () => {
     return (
         <div>
             <Header transparent = {false}/>
-            <main className="h-screen"><EventsGallery/></main>
+            <main className="mb-10"><EventsGallery/></main>
             <Footer/>
         </div>
     )
