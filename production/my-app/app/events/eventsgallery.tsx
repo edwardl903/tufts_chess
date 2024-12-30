@@ -1,6 +1,7 @@
 "use client"; 
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { events, Event } from "./eventsdata";
 
 const semesters = [
@@ -85,7 +86,13 @@ const EventsGallery: React.FC = () => {
                             <div className="flex-1">
                                 <h2 className="text-4xl text-[gray-800] font-bold font-sans pb-2">{event.name}</h2>
                                 <p className="text-md text-gray-800 font-bold font-sans">{event.date}</p>
-                                <p className="text-gray-700">{event.description}</p>
+                                <p className="text-gray-700">{event.shortdescription}</p>
+                                <Link
+                                    href={`/events/${event.id}`}
+                                    className="text-[#64b0e2] font-bold underline mt-2 inline-block"
+                                >
+                                    View Details
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -109,7 +116,7 @@ const EventsGallery: React.FC = () => {
                         className={`px-4 py-2 rounded-md ${
                         currentPage === index + 1
                             ? "bg-[#64b0e2] text-white"
-                            : "bg-gray-400 text-white hover:bg-red-500"
+                            : "bg-gray-400 text-white hover:bg-green-500"
                         }`}
                         onClick={() => goToPage(index + 1)}
                     >
