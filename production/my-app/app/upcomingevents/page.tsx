@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import EventsGallery from "./eventsgallery";
+import EventsGallery from "./UpcomingEventsGallery";
 
 const Events: React.FC = () => {
     return (

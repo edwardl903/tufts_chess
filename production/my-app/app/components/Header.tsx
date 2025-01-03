@@ -24,15 +24,15 @@ const Header: React.FC<HeaderProps> = ({ transparent }) => {
                         height={60}
                         className="rounded-2xl"
                     ></Image>
-                <h1 className="text-2xl text-white transform tracking-widest">Tufts Chess</h1>
+                <h1 className="text-2xl text-white font-sans transform tracking-widest">Tufts Chess</h1>
                 </div>
             </Link>
 
             {/* pages link son the right */}
-            <nav className="text-xl flex space-x-10 pr-8">
+            <nav className="text-[22px] flex space-x-10 pr-8">
 
                 {/* about and its dropdown */}
-                <div className="relative group">
+                <div className="relative group font-serif">
                     <Link href="/about" passHref>
                         <div className="flex items-center space-x-2 cursor-pointer text-white">
                             <h1>About</h1>
@@ -59,8 +59,6 @@ const Header: React.FC<HeaderProps> = ({ transparent }) => {
                             <li className="px-4 py-1 hover:bg-gray-200">
                                 <Link href="/about/eboard">Eboard</Link>
                             </li>
-                            <li className="px-4 py-1 hover:bg-gray-200">Mission</li>
-                            <li className="px-4 py-1 hover:bg-gray-200">History</li>
                         </ul>
                     </div>
                 </div>
@@ -68,40 +66,43 @@ const Header: React.FC<HeaderProps> = ({ transparent }) => {
 
             
                 <Link href="/leaderboard" passHref>
-                    <h1 className="text-white">Leaderboard</h1>
+                    <h1 className="text-white font-serif">Leaderboard</h1>
                 </Link>
 
                 <Link href="/resources" passHref>
-                    <h1 className="text-white">Resources</h1>
+                    <h1 className="text-white font-serif">Resources</h1>
                 </Link>
 
                 {/* gallery and its dropdown */}
-                <div className="relative group">
-                    <Link href="/events" passHref>
-                        <div className="flex items-center space-x-2 cursor-pointer text-white">
-                            <h1>Events</h1>
-                            {/* Dropdown arrow */}
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={2}
-                                stroke="currentColor"
-                                className="w-4 h-4"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M6 9l6 6 6-6"
-                                />
-                            </svg>
-                        </div>
+                <div className="relative group font-serif">
+
+                    <div className="flex items-center space-x-2 cursor-pointer text-white">
+                        <h1>Events</h1>
+                        {/* Dropdown arrow */}
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={2}
+                            stroke="currentColor"
+                            className="w-4 h-4"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M6 9l6 6 6-6"
+                            />
+                        </svg>
+                    </div>
                 
-                    </Link>
-                    <div className="absolute hidden group-hover:block bg-white text-black rounded shadow-lg">
+                    <div className="absolute hidden group-hover:block bg-white text-black rounded shadow-lg font-serif">
                         <ul className="p-1 text-md text-gray-600">
-                            <li className="px-4 py-1 hover:bg-gray-200">Upcoming Events</li>
-                            <li className="px-4 py-1 hover:bg-gray-200">Past Events</li>
+                            <li className="px-4 py-1 hover:bg-gray-200">
+                                <Link href="/upcomingevents">Upcoming Events</Link>
+                            </li>
+                            <li className="px-4 py-1 hover:bg-gray-200">
+                                <Link href="/pastevents">Past Events</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -109,7 +110,7 @@ const Header: React.FC<HeaderProps> = ({ transparent }) => {
 
 
                 <Link href="/contact" passHref>
-                    <h1 className="text-white">Contact</h1>
+                    <h1 className="text-white font-serif">Contact</h1>
                 </Link>
             </nav>
         </header>

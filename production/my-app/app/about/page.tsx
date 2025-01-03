@@ -21,7 +21,7 @@ const about: React.FC = () => {
             <h1 className="text-lg leading-tight pb-4">
                 Tufts Chess Club @ Tufts University
             </h1>
-            <h1 className="text-[42px] font-bold leading-tight pt-4 pb-6">
+            <h1 className="text-[42px] font-bold font-serif leading-tight pt-4 pb-6">
                 We aim to the chess 
                 <br/>
                 accessible and welcoming 

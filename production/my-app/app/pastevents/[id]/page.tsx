@@ -1,8 +1,8 @@
 "use client"; 
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import { events, Event } from "../eventsdata";
+import { events, Event } from "../PastEventsData";
 import Header from "../../components/Header"; 
 import Footer from "../../components/Footer"; 
 import Image from "next/image";
@@ -18,7 +18,7 @@ const EventsDetails: React.FC = () => {
             </div>
         );
     }
-    
+
     return (
         <div className="relative">
             <Header transparent={false}/>
@@ -67,8 +67,8 @@ const EventsDetails: React.FC = () => {
 
             </section>
 
-            <section className="flex flex-col items-center justify-center w-full bg-white p-10 space-y-8">
-                <div className="relative w-full max-w-6xl h-[350px]">
+            <section className="flex flex-col items-center justify-center w-full bg-white p-10 mb-10 space-y-8">
+                <div className="relative w-full max-w-5xl h-[250px]">
                     <Image
                         src="/aboutpage_1.jpeg"
                         alt="whatever"
@@ -78,8 +78,8 @@ const EventsDetails: React.FC = () => {
                     </Image>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 w-full max-w-6xl">
-                <div className="relative w-full h-[350px]">
+                <div className="grid grid-cols-2 gap-4 w-full max-w-5xl">
+                <div className="relative w-full h-[250px]">
                         <Image
                             src="/aboutpage_1.jpeg"
                             alt="hiii"
@@ -88,7 +88,7 @@ const EventsDetails: React.FC = () => {
                         ></Image>
                     </div>
 
-                    <div className="relative w-full h-[350px]">
+                    <div className="relative w-full h-[250px]">
                     <Image
                             src="/aboutpage_1.jpeg"
                             alt="helloo"

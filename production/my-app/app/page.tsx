@@ -19,16 +19,16 @@ export default function Home() {
         </div>
 
         {/* cover the picutre by a thin gray layer */}
-        <div className="absolute inset-0 bg-gray-700 opacity-45"></div>
+        <div className="absolute inset-0 bg-gray-700 opacity-40"></div>
 
         <Header transparent/>
 
         {/* bottom right text */}
-        <div className="absolute bottom-8 left-8 z-20 text-blue-300">
-          <h1 className="text-9xl font-bold leading-tight drop-shadow-md">
+        <div className="absolute text-[140px] bottom-8 left-8 font-serif z-20 text-[#64b0e2]">
+          <h1 className="font-bold leading-tight drop-shadow-md">
             TUFTS
           </h1>
-          <h1 className="text-9xl font-bold leading-tight drop-shadow-md transform scale-y-125s">
+          <h1 className="font-bold leading-tight drop-shadow-md transform scale-y-125s">
             CHESS CLUB
           </h1>
         </div>
@@ -37,55 +37,71 @@ export default function Home() {
 
 
       {/* [#EAFBFF] */}
-      <section className="w-full bg-gray-100 py-24">
-        <div className="container mx-auto px-15 flex items-center justify-between">
-          {/* Left Section: Heading */}
-          <div className="w-1/3">
-            <h1 className="text-4xl font-bold text-gray-600 leading-tight">
-              WELCOME TO <br/> TUFTS <br/> CHESS CLUB
-            </h1>
-          </div>
+      <section className="w-full bg-gray-100 py-12">
 
           {/* Right Section: Paragraph and Link */}
-          <div className="w-1/2 text-gray-500">
-            <p className="text-lg mb-6">
+          <div className="text-center">
+            <p className="text-xl text-gray-500 px-60 mb-3">
             We are the ONE and ONLY Tufts Chess Club! Whether you're a skilled 
             player or just starting to learn chess, we welcome you. Join us for 
             weekly meetings, exciting tournaments, community bonding events, 
             and much more!
             </p>
+            
             <a
-              href="#"
-              className="text-lg font-semibold flex items-center space-x-2 hover:underline"
+              href="/about"
+              className="inline-flex items-center justify-center px-6 py-3 
+              text-2xl font-bold text-gray-500 bg-transparent rounded-md 
+              hover:bg-[#64b0e2] hover:underline hover:text-white
+              transition duration-300"
             >
-              <span>JOIN US</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={3}
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13.5 4.5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
+              JOIN US
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="w-6 h-6 ml-2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+    
+
             </a>
           </div>
+
+      </section>
+
+      <section className="w-full bg-gradient-to-b from-gray-100 to-[#64b0e2] flex items-center justify-center">
+        <div className="text-center">
+          {/* <h2 className="text-4xl font-bold text-white mb-2">
+            A Little Gimpse
+          </h2> */}
+
+          {/* video link */}
+          <div className="relative overflow-hidden w-[900px] max-w-6xl mx-auto aspect-video rounded-lg shadow-lg">
+            <iframe
+              className="absolute top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/brHQouUnFP0"
+              title="YouTube"
+              frameBorder="0"
+              allow="accelerometer; autoplay"
+              allowFullScreen
+            >
+            </iframe>
+          </div>
+
         </div>
       </section>
 
-      <section>
-        <div className="h-20 bg-white"></div>
-      </section>
 
+      <EventsGallery/>
 
-      <EventsGallery />
-
-      <section className="h-20 bg"></section>
 
       <Footer/>
   </>

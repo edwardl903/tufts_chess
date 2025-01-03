@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { events, Event } from "./eventsdata";
+import { events, Event } from "./PastEventsData";
 
 const semesters = [
     {label: "-- All --", value: ""},
