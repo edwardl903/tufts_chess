@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 // import EventsGallery from "./eventsgallery";
-import DailyChessPuzzle from "../components/DailyChessPuzzle";
+// import DailyChessPuzzle from "../components/DailyChessPuzzle";
 
 const Events: React.FC = () => {
     return (
@@ -10,7 +10,7 @@ const Events: React.FC = () => {
             <Header transparent = {false}/>
             {/* <main className="mb-10"><EventsGallery/></main> */}
             <main className="m-10">
-                <DailyChessPuzzle/>
+                {/* <DailyChessPuzzle/> */}
             </main>
             <Footer/>
         </div>
